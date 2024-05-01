@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Play Sound</title>
+</head>
+<body>
+    <!-- Thẻ audio ẩn để phát âm thanh -->
+    <audio id="myAudio" autoplay loop muted>
+        <source src="./assets/musics/Mot_doi_thuong-Nguyen_Thi_Tra.mp3" type="audio/mpeg">
+        Trình duyệt của Trà chưa hỗ trợ nhé!!!
+    </audio>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        }
+        
+        window.addEventListener("wheel", playAudio);
+    
+        window.addEventListener("scroll", playAudio);
+
+        window.addEventListener("mousemove", playAudio);
+    </script>
+</body>
+</html>

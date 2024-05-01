@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/tkw-never-stop.min.css" />
+    <script async src="./assets/libs/jquery/jquery.min.js"></script>
+    <script async src="./assets/libs/gsap/gsap.min.js"></script>
+    <script async src="./assets/libs/gsap/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <section class="bbug_tea container_bbug_tea">
+         <div class="bbug_tea_title">
+            <h2 class="bbug_tea_txt-title container-title">
+                Hành trình quá khứ của <b class="txt-higlight">Nguyễn Thị Trà</b> 
+                với những bức ảnh đẹp...</h2>
+            <div class="bbug_tea_banner">
+                <div class="bbug_tea_banner_left">
+                    <div class="banner_item">
+                        <img src="./assets/images/tea_2.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_4.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_5.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_6.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_3.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_4_1.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_5_1.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_6_1.png" alt="love_tea" title="love_tea">
+                    </div>
+                </div>
+                <div class="bbug_tea_banner_center">
+                    <div class="banner_item_center container-center">
+                        <!-- <img src="./assets/images/tea_main_love.png" alt="tea_main_love" title="tea_main_love"> -->
+                        <p class="date-center">366/366</p>
+                        <div class="year-center-counter">
+                           <div class="number-one">2</div>
+                           <div class="number-one">0</div>
+                           <div class="number-one">2</div>
+                           <div class="year-next">
+                            <div class="number-last-top">4</div>
+                           <div class="number-last-bottom">5</div>
+                           </div>
+                        </div>
+                        <div class="txt-show">A NEW BEGINNING</div>
+                    </div>
+                </div>
+                <div class="bbug_tea_banner_right">
+                    <div class="banner_item_right">
+                        <img src="./assets/images/tea_7.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_8.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_9.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_10.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_7_1.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_8_1.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_9_1.png" alt="love_tea" title="love_tea">
+                        <img src="./assets/images/tea_10_1.png" alt="love_tea" title="love_tea">
+                    </div>
+                </div>
+            </div>
+            <div class="icon-tea">
+                <img src="./assets/images/icon-tea.png" alt="">
+            </div>
+         </div>
+    </section>
+    <!-- for screen mobile -->
+    <section class="bbug_tea_mb">
+        <div class="bbug_tea_banner_mb">
+            <div class="bbug_tea_banner_center_mb">
+                <div class="banner_item_center_mb container-center">
+                    <!-- <img src="./assets/images/tea_main_love.png" alt="tea_main_love" title="tea_main_love"> -->
+                    <p class="date-center">366/366</p>
+                    <div class="year-center-counter">
+                       <div class="number-one">2</div>
+                       <div class="number-one">0</div>
+                       <div class="number-one">2</div>
+                       <div class="year-next">
+                        <div class="number-last-top">4</div>
+                       <div class="number-last-bottom">5</div>
+                       </div>
+                    </div>
+                    <div class="txt-show">A NEW BEGINNING</div>
+                </div>
+                <div class="heart_content_mb">
+                    <div class="heart_head_phone">
+                      <img src="./assets/images/icon-headphone-tea.png" alt="">
+                    </div>
+                    <div class="heart_plays">
+                      <div class="heart_pre">
+                          <img src="./assets/images/icon-pre-tea.png" alt="">
+                        </div>
+                        <div class="heart_wave" id="hear_wave_mb">
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                                <div class="wave"></div>
+                        </div>
+                        <div class="heart_next">
+                          <img src="./assets/images/icon-next-tea.png" alt="">
+                        </div>
+                    </div>
+                    <div class="heart_text_details_mb" id="heart_text_details_mb">
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+    <section class="bbug_tea_heart container_bbug_tea">
+       <div class="heart_layout">
+        <div class="heart_box" id="heart_bbugtea">
+          <span class="heart_text" id="days"></span>
+        </div>
+        <div class="heart_box" id="heart_bbugtea">
+          <span class="heart_text" id="hours"></span>
+        </div>
+        <div class="heart_box" id="heart_bbugtea">
+          <span class="heart_text" id="minutes"></span>
+        </div>
+        <div class="heart_box" id="heart_bbugtea">
+          <span class="heart_text" id="seconds"></span>
+        </div>
+      </div>
+      
+       <div class="heart_content">
+          <div class="heart_head_phone">
+            <img src="./assets/images/icon-headphone-tea.png" alt="">
+          </div>
+          <div class="heart_plays">
+            <div class="heart_pre">
+                <img src="./assets/images/icon-pre-tea.png" alt="">
+              </div>
+              <div class="heart_wave">
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+                <div class="wave"></div>
+              </div>
+              <div class="heart_next">
+                <img src="./assets/images/icon-next-tea.png" alt="">
+              </div>
+          </div>
+          
+        <div class="heart_text_details" id="heart_text_details">
+        </div>
+        <div class="musics_love_tea">
+            <audio id="myAudio" autoplay loop>
+                <source src="./assets/musics/Mot_doi_thuong-Nguyen_Thi_Tra.mp3" type="audio/mpeg">
+                Trình duyệt của Trà chưa hỗ trợ nhé!!!
+            </audio>
+        </div>
+       </div>
+    </section>
+
+
+
+
+    <section class="standard sec-com txt-white">
+        <div class="container">
+        <div class="standard-wrap">
+        <h2 class="sec-com-tt fw-700 txt-center" data-aos="fade-up">
+        Không phải là “tùy hứng”<br> Website MONA có TIÊU CHUẨN TEST CAO<br><span class="hl-lms txt-upper">nghiêm
+        ngặt</span></h2>
+        <div class="standard-comon">
+        <div class="standard-svg">
+        <div class="inner">
+        <div class="icon"> <img class="img" src="./assets/images/icon-bbugteaheart.png" alt></div>
+        <img class="image" src="./assets/images/standard-svg.png" >
+        <div class="mask">
+        <div class="decor-radient"></div>
+        </div>
+        </div>
+        </div>
+        <div class="standard-list" id="standard-list">
+        <div class="standard-item">
+        <div class="standard-content" data-aos="fade-right">
+        <div class="standard-tt fw-600">
+        <spa class="txt-lms">
+        Unit</spa> Test
+        </div>
+        <p class="standard-desc">
+        Những quy chuẩn riêng trong lập trình website cho nhân viên lưu ý khi lập trình cho một dự án. </p>
+        </div>
+        <div class="standard-image" data-aos="fade-left">
+        <div class="image"><img class="img opti-image" data-src="https://mona.media/template/assets/hq-images/tkw-never-stop/standard-image-02.png" src="https://mona.media/template/assets/images/tkw-never-stop/standard-image-02.png" alt></div>
+        </div>
+        </div>
+        <div class="standard-item">
+        <div class="standard-content" data-aos="fade-right" data-aos-delay="200">
+        <div class="standard-tt fw-600">
+        <spa class="txt-lms">
+        Automation</spa> Test
+        </div>
+        <p class="standard-desc">
+        MONA có những công cụ kiểm tra tự động bằng code khác sau các bước trên để rà soát xem còn dư lại các
+        lỗi nhỏ trong quá trình lập trình chưa xử lý</p>
+        </div>
+        <div class="standard-image" data-aos="fade-left" data-aos-delay="200">
+        <div class="image"><img class="img opti-image" data-src="https://mona.media/template/assets/hq-images/tkw-never-stop/standard-image-03.png" src="https://mona.media/template/assets/images/tkw-never-stop/standard-image-03.png" alt></div>
+        </div>
+        </div>
+        <div class="standard-item">
+        <div class="standard-content" data-aos="fade-right" data-aos-delay="400">
+        <div class="standard-tt fw-600">
+        <spa class="txt-lms">
+        Manual</spa> Test
+        </div>
+        <p class="standard-desc">
+        Là công đoạn testing website chạy bằng cơm từ các chuyên viên giám sát dự án để phê duyệt tiêu chuẩn
+        trước khi đưa cho khách hàng feedback</p>
+        </div>
+        <div class="standard-image" data-aos="fade-left" data-aos-delay="400">
+        <div class="image"><img class="img opti-image" data-src="./assets/"></div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+<script async>
+        function playAudio() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        }
+//         var observer = new MutationObserver(function(mutations) {
+//     mutations.forEach(function(mutation) {
+//         var addedNodes = Array.from(mutation.addedNodes);
+//         if (addedNodes.some(node => node.classList && node.classList.contains("bbug_tea_banner"))) {
+//             playAudio(); 
+//         }
+//     });
+// });
+
+// observer.observe(document.body, { childList: true, subtree: true });
+        window.addEventListener("wheel", playAudio);
+    
+        window.addEventListener("scroll", playAudio);
+
+        window.addEventListener("mousemove", playAudio);
+</script>
+<script async>
+    var countDownDate = new Date("Dec 22, 2024 08:17:02").getTime();
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerHTML = days + ' ngày';
+  document.getElementById("hours").innerHTML = hours + ' giờ';
+  document.getElementById("minutes").innerHTML = minutes + ' phút';
+  document.getElementById("seconds").innerHTML = seconds + ' giây';
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "CHÚC MỪNG SINH NHẬT NGUYỄN THỊ TRÀ";
+  }
+}, 1000);
+
+</script>
+<script async>
+        var contents = [
+          "Hành trình quá khứ của Nguyễn Thị Trà với những bức ảnh đẹp...",
+          "Một câu chuyện tuyệt vời về tình yêu và sự hy sinh...",
+          "Khám phá thế giới mới với những phiêu lưu hấp dẫn...",
+        ];
+        
+        var currentIndex = 0;
+        
+        function createKaraokeEffect(container, content) {
+          var words = content.split(" ");
+          container.innerHTML = "";
+        
+          words.forEach(function(word) {
+            var span = document.createElement("span");
+            span.textContent = word + " ";
+            container.appendChild(span);
+          });
+        }
+        
+        function changeContent() {
+          var heartTextDetails = document.getElementById("heart_text_details");
+          createKaraokeEffect(heartTextDetails, contents[currentIndex]);
+        
+          currentIndex++;
+          if (currentIndex >= contents.length) {
+            currentIndex = 0;
+          }
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+          changeContent();
+        
+          setInterval(changeContent, 12000); 
+        });
+        
+</script>
+<script async>
+    var contentsMb = [
+      "Hành trình quá khứ của Nguyễn Thị Trà với những bức ảnh đẹp...",
+      "Một câu chuyện tuyệt vời về tình yêu và sự hy sinh...",
+      "Khám phá thế giới mới với những phiêu lưu hấp dẫn...",
+    ];
+    
+    var currentIndexMb = 0;
+    
+    function createKaraokeEffectMb(container, content) {
+      var wordsMb = content.split(" ");
+      container.innerHTML = "";
+    
+      wordsMb.forEach(function(word) {
+        var span = document.createElement("span");
+        span.textContent = word + " ";
+        container.appendChild(span);
+      });
+    }
+    
+    function changeContentMb() {
+      var heartTextDetailsMb = document.getElementById("heart_text_details_mb");
+      createKaraokeEffectMb(heartTextDetailsMb, contents[currentIndexMb]);
+    
+      currentIndexMb++;
+      if (currentIndexMb >= contents.length) {
+        currentIndexMb = 0;
+      }
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+      changeContentMb();
+    
+      setInterval(changeContentMb, 12000); 
+    });
+    
+</script>
+</body>
+</html>
