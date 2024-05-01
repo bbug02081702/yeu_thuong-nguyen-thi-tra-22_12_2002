@@ -69,14 +69,14 @@
             <div class="bbug_tea_banner_center_mb">
                 <div class="banner_item_center_mb container-center">
                     <!-- <img src="./assets/images/tea_main_love.png" alt="tea_main_love" title="tea_main_love"> -->
-                    <p class="date-center">366/366</p>
+                    <p class="date-center"> </p>
                     <div class="year-center-counter">
-                       <div class="number-one">2</div>
-                       <div class="number-one">0</div>
-                       <div class="number-one">2</div>
+                       <div class="number-one"> </div>
+                       <div class="number-two"> </div>
+                       <div class="number-three"> </div>
                        <div class="year-next">
-                        <div class="number-last-top">4</div>
-                       <div class="number-last-bottom">5</div>
+                        <div class="number-last-top"> </div>
+                       <div class="number-last-bottom"> </div>
                        </div>
                     </div>
                     <div class="txt-show">A NEW BEGINNING</div>
@@ -218,6 +218,74 @@
         </div>
         </div>
         </section>
+<script async>
+            // Lấy năm hiện tại
+            const currentYear = new Date().getFullYear().toString();
+            
+            // Lấy năm tiếp theo
+            const nextYear = (new Date().getFullYear() + 1).toString();
+            
+            // Chọn tất cả các phần tử có class là "number-one"
+            const numberOneElements = document.querySelectorAll('.number-one');
+            
+            // Chọn tất cả các phần tử có class là "number-two"
+            const numberTwoElements = document.querySelectorAll('.number-two');
+            
+            // Chọn tất cả các phần tử có class là "number-three"
+            const numberThreeElements = document.querySelectorAll('.number-three');
+            
+            // Chọn phần tử có class là "number-last-year"
+            const numberLastYearElement = document.querySelector('.number-last-top');
+            
+            // Chọn phần tử có class là "number-last-next-year"
+            const numberLastNextYearElement = document.querySelector('.number-last-bottom');
+
+            
+            // Hiển thị số thứ nhất của năm hiện tại
+            numberOneElements.forEach((element, index) => {
+              if (index < currentYear.length) {
+                element.innerText = currentYear[index];
+              }
+            });
+            
+            // Hiển thị số thứ hai của năm hiện tại
+            numberTwoElements.forEach((element, index) => {
+              if (index < currentYear.length - 1) {
+                element.innerText = currentYear[index + 1];
+              }
+            });
+            
+            // Hiển thị số thứ ba của năm hiện tại
+            numberThreeElements.forEach((element, index) => {
+              if (index < currentYear.length - 2) {
+                element.innerText = currentYear[index + 2];
+              }
+            });
+            
+            // Hiển thị số cuối cùng của năm hiện tại
+            numberLastYearElement.innerText = currentYear[currentYear.length - 1];
+            
+            // Hiển thị số cuối cùng của năm tiếp theo
+            numberLastNextYearElement.innerText = nextYear[nextYear.length - 1];
+
+            
+            // Tính số ngày hiện tại của năm
+            const numberOfDays = Math.ceil((lastDayOfYear - firstDayOfYear) / (1000 * 60 * 60 * 24));
+
+            // Lấy ngày hiện tại
+            const currentDate = new Date();
+
+            // Tính số ngày đã trôi qua từ đầu năm đến hiện tại
+            const millisecondsPerDay = 1000 * 60 * 60 * 24;
+            const numberOfDaysPassed = Math.ceil((currentDate - firstDayOfYear) / millisecondsPerDay) + ' / ' + numberOfDays;
+
+            // Chọn phần tử có class là "date-center"
+            const dateNowElement = document.querySelector('.date-center');
+            // Hiển thị tổng số ngày hiện tại của năm trong phần tử "date-center"
+            dateNowElement.innerText = numberOfDaysPassed;
+            
+            
+</script>
 <script async>
         function playAudio() {
             var audio = document.getElementById("myAudio");
