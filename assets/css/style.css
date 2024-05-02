@@ -340,6 +340,236 @@ body{
     animation: karaokeAnimation 3s infinite; 
   } */
 
+/* icon love tea bottom animation */
+.open-modal-btn {
+	z-index: 9999;
+    position: fixed;
+    bottom: 12px;
+    right: 22px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	transition: 0.25s;
+}
+.open-modal-btn img{
+	width: 48px;
+	height: auto;
+	flex-shrink: 0;
+}
+#bbug_call_love_tea_bee .ping{
+	right: 12px;
+    bottom: 22px;
+	border: 1px solid #ff038b;
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    background-color: #ff038b;
+    border-radius: 100%;
+    -webkit-animation-duration: 1.25s;
+    animation-duration: 1.25s;
+    -webkit-animation-name: sonar;
+    animation-name: sonar;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    display: block;
+    /* margin: 14px 0 0 14px; */
+    position: absolute;
+}
+@-webkit-keyframes sonar{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}100%{-webkit-transform:scale(4);transform:scale(4);opacity:0}}
+@keyframes sonar{0%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}100%{-webkit-transform:scale(4);transform:scale(4);opacity:0}}
+.image-top-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.modal {
+	padding: 0px 12px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hide {
+	display: none;
+}
+
+.modal__inner {
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width: 100%;
+	max-width: 450px;
+	background-color: #FF038B;
+	border-radius: 22px;
+	overflow: hidden;
+	animation: showModal linear 0.2s;
+	position: relative;
+}
+
+@keyframes showModal {
+	from {
+		top: -200px;
+		opacity: 0;
+	}
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+.modal__header {
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 15px;
+	font-size: 17px;
+}
+.modal__header h2{
+	text-align: center;
+	width: 100%;
+	max-width: 162px;
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 700;
+}
+.modal__header img{
+	margin-top: 12px;
+	height: auto;
+	width: 100%;
+	max-width: 48px;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal__body{
+	padding: 15px;
+}
+.form-container { 
+	gap: 12px;
+	display: flex; 
+	flex-direction: column; 
+} 
+.input_container {
+    position: relative;
+    display: flex;
+	align-items: center;
+}
+.input-icon-phone {
+    position: absolute;
+    left: 12px; 
+    width:  21.875px; 
+    height: auto;
+}
+.input-icon{
+    position: absolute;
+    left: 12px; 
+    width:  21.875px; 
+    height: auto;
+}
+.modal__body .form-container .form_input {
+	color: #ff038b;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #FFF;
+    border-radius: 12px;
+    font-size: 16px;
+    box-sizing: border-box; 
+}
+.form_input::placeholder {
+	text-align: center;
+    color: #999; 
+}
+.form_input:focus {
+    outline: none; 
+    border-color: #ffffff; 
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5); 
+}
+.form_input:not(:focus) {
+    transition: border-color 0.3s, box-shadow 0.3s; 
+}
+
+.modal__body .form-container .txt_dream_of_tra {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 12px;
+    font-size: 16px;
+    resize: vertical; 
+    box-sizing: border-box; 
+    text-align: center; 
+    color: #ff038b;
+}
+
+.txt_dream_of_tra::placeholder{
+	text-align: center;
+    color: #999; 
+}
+
+.txt_dream_of_tra:focus {
+    outline: none; 
+    border-color: #ffffff;  
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5); 
+}
+
+.txt_dream_of_tra:not(:focus) {
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+.modal__footer {
+	padding: 15px;
+	text-align: right;
+}
+
+.modal__footer button {
+	outline: none;
+	border: none;
+	padding: 10px 20px;
+	background-color: #fff;
+	color: #ff038b;
+	border-radius: 12px;
+	cursor: pointer;
+}
+.btn_container_input{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+.btn_container_input .btn-tra-no{
+	cursor: pointer;
+	color: #ff038b;
+	gap: 12px;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	padding: 6px 12px;
+	border-radius: 20px;
+}
+.btn_container_input .btn-tra-no img{
+	width: 100%;
+	max-width: 24.219px;
+	height: auto;
+}
+.txt-crush-tra{
+	margin-top: 22px;
+	text-align: left;
+	color: #FFF;
+	/* line-height: normal; */
+}
+
+
+
+
+
 /* reponsive for mobile */
 @media screen and (max-width: 768px){
     .container_bbug_tea_mb{
@@ -355,7 +585,10 @@ body{
     .bbug_tea{
         display: none;
     }
-    .bbug_tea_heart{
+    .heart_content{
+        display: none;
+    }
+    .heart_text_details{
         display: none;
     }
     .bbug_tea_banner_mb .bbug_tea_banner_center_mb {
@@ -523,4 +756,87 @@ body{
           background-size: 0% 100%; 
         }
       }
+    
+    .bbug_tea_mb .bbug_tea_lib{
+        padding: 0px 2px;
+        flex-direction: column;
+        margin-top: 22px;
+        margin-bottom: 22px;
+        display: flex;
+
+    }
+    .bbug_tea_mb .bbug_tea_lib .bbug_tea_lib-title{
+        text-align: center;
+        color: var(--txt_primary);
+        width: 100%;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0 auto;
+        max-width: 271px;
+    }
+    .bbug_tea_mb .bbug_tea_lib .txt-higlight{
+        color: var(--txt-higlight);
+    }
+    .bbug_tea_mb .bbug_tea_lib .bbug_tea_box_images{
+        margin-top: 22px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+    }
+    .bbug_tea_box_images img {
+        /* max-width: 155px; */
+        height: auto;
+        width: 100%;
+    }
+
+    /* heart_love_tea */
+    .bbug_tea_heart{
+        margin-top: 22px;
+        margin-bottom: 22px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
+    .bbug_tea_heart .heart_layout {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        gap: 82px;
+    }
+    .bbug_tea_heart .heart_layout .heart_box {
+        position: relative;
+        max-width: 82px;
+        max-height: 82px;
+        background-color: var(--txt_primary);
+        transform: rotate(-45deg);
+        box-shadow: -12px 12px 82px #fff;
+        animation: heartlovetea 1.2s infinite;
+    }
+    #heart_bbugtea:before {
+        position: absolute;
+        content: "";
+        top: -50%;
+        max-width: 82px;
+        max-height: 82px;
+        background: #fff;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        box-shadow: -12px -12px 82px #fff;
+    }
+    #heart_bbugtea:after {
+        position: absolute;
+        content: "";
+        right: -50%;
+        max-width: 82px;
+        max-height: 82px;
+        background: #fff;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        box-shadow: 12px 12px 82px #fff;
+    }
 }
