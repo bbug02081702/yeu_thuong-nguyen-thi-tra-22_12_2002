@@ -11,6 +11,7 @@
   <!-- <script async src="./assets/libs/gsap/gsap.min.js"></script>
   <script async src="./assets/libs/gsap/ScrollTrigger.min.js"></script>  -->
 </head>
+
 <body>
   <section class="bbug_tea container_bbug_tea">
     <div class="bbug_tea_title">
@@ -225,7 +226,7 @@
             <textarea class="txt_dream_of_tra" placeholder="Hãy nhập điều ước cho sinh nhật của Trà trong năm nay nhé!"
               type="text" minlength="12" rows="4" cols="50" maxlength="2212" name="txt_dream_of_tra"
               id="txt_dream_of_tra">
-								Hãy nhập điều ước cho sinh nhật của Trà trong năm nay nhé!
+
 							</textarea>
           </div>
           <div class="btn_container_input">
@@ -533,6 +534,26 @@
       if (e.target == e.currentTarget) toggleModal()
     })
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var placeholders = [
+        "Trà đã có bạn trai chưa??",
+        "Nếu đã có rồi thì đừng nhập nhé!!",
+        "Trà ước điều ước sinh nhật tới ở dưới nhé!!",
+        "Chúc Trà tất cả điều tốt đẹp ở hiện tại và tương lai...",
+        // Thêm các placeholder khác nếu cần
+      ];
+
+      var placeholderIndex = 0;
+      var placeholderElement = document.getElementById('phone_of_tra');
+
+      setInterval(function () {
+        placeholderElement.setAttribute('placeholder', placeholders[placeholderIndex]);
+        placeholderIndex = (placeholderIndex + 1) % placeholders.length;
+      }, 3000); // Thay đổi placeholder mỗi 3 giây
+    });
+  </script>
+
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/ScrollTrigger.min.js"></script> -->
 </body>
