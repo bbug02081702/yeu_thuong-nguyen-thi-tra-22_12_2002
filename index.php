@@ -11,20 +11,20 @@ Template Name: Nguyễn Thị Trà(22-12-2002)
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:title" content="Chúc mọi điều tốt đẹp nhất đến với em Nguyễn Thị Trà(22-12-2002) ở hiện tại và tương lai">
   <meta property="og:description" content="Hãy luôn tươi cười, rạng rỡ và mong em Nguyễn Thị Trà thật hạnh phúc nhé...!!">
-  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/teabee/assetsimages/screenshot.png">
+  <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/teabee/assets/images/screenshot.png">
   <meta property="og:url" content="<?php echo esc_url( get_permalink() ); ?>">
   <meta name="description" content="Hãy luôn tươi cười, rạng rỡ và mong em Nguyễn Thị Trà thật hạnh phúc nhé...!!">
   <meta name="keywords" content="Nguyễn Thị Trà, Nguyễn Xuân Tài, Bbugsoft, Bbug, Teabee">
   <meta name="author" content="Nguyễn Xuân Tài">
+  <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/favicon.png" />
   <title>Chúc mọi điều tốt đẹp nhất đến với Nguyễn Thị Trà(22-12-2002) ở hiện tại và tương lai</title>
   <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/teabee/assets/fonts/Montserrat/Montserrat-Light.woff" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/teabee/assets/fonts/Montserrat/Montserrat-Bold.woff" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/teabee/assets/fonts/Montserrat/Montserrat-Black.woff" as="font" type="font/woff2" crossorigin>
-
+  <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/teabee/assets/images/screenshot.png" as="image" crossorigin>
   <link rel="icon" href="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/favicon.png" sizes="32x32" />
   <link rel="icon" href="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/favicon.png" sizes="192x192" />
   <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/favicon.png" />
-  <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/favicon.png" />
 
   <style>
     :root {
