@@ -99,7 +99,7 @@ body {
     }
 
     100% {
-        transform: translateY(-100%);
+        transform: translateY(-212%);
     }
 }
 
@@ -110,7 +110,7 @@ body {
 
 @keyframes marqueeBottom {
     0% {
-        transform: translateY(-100%);
+        transform: translateY(-212%);
     }
 
     100% {
@@ -1234,7 +1234,7 @@ body {
         /* max-width: 155px; */
         height: auto;
         width: 100%;
-        animation: marqueeTopMb 22s linear infinite;
+        animation: marqueeTopMb 82s linear infinite;
     }
 
     @keyframes marqueeTopMb {
@@ -1243,7 +1243,7 @@ body {
         }
 
         100% {
-            transform: translateY(-100%);
+            transform: translateY(-1600%);
         }
     }
 
@@ -1251,12 +1251,12 @@ body {
         /* max-width: 155px; */
         height: auto;
         width: 100%;
-        animation: marqueeBottomMb 22s linear infinite;
+        animation: marqueeBottomMb 82s linear infinite;
     }
 
     @keyframes marqueeBottomMb {
         0% {
-            transform: translateY(-100%);
+            transform: translateY(-1600%);
         }
 
         100% {
