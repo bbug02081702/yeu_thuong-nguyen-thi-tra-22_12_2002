@@ -170,6 +170,7 @@ body {
     -webkit-background-clip: text;
      background-clip: text;
 }
+
 .bbug_tea_banner .bbug_tea_banner_center .banner_item_center .year-center-counter .number-two {
     -webkit-text-fill-color: transparent;
     background: url(../images/fill_0.png) center;
@@ -978,12 +979,56 @@ body {
         line-height: 0.8;
     }
 
+    /* .bbug_tea_banner_mb .bbug_tea_banner_center_mb .banner_item_center_mb .year-center-counter .number-one {
+        font-family: Montserrat !important;
+        font-weight: 900;
+    } */
+
     .bbug_tea_banner_mb .bbug_tea_banner_center_mb .banner_item_center_mb .year-center-counter .number-one {
         font-family: Montserrat !important;
         font-weight: 900;
+        -webkit-text-fill-color: transparent;
+        background: url(../images/fill_2.png) no-repeat;
+        -webkit-background-clip: text;
+         background-clip: text;
+    }
+    
+    .bbug_tea_banner_mb .bbug_tea_banner_center_mb .banner_item_center_mb .year-center-counter .number-two {
+        font-family: Montserrat !important;
+        font-weight: 900;
+        -webkit-text-fill-color: transparent;
+        background: url(../images/fill_0.png) center;
+        -webkit-background-clip: text;
+         background-clip: text;
+    }
+    .bbug_tea_banner_mb .bbug_tea_banner_center_mb .banner_item_center_mb .year-center-counter .number-three {
+        font-family: Montserrat !important;
+        font-weight: 900;
+        -webkit-text-fill-color: transparent;
+        background: url(../images/fill_2_three.png) no-repeat;
+        -webkit-background-clip: text;
+         background-clip: text;
+    }
+    .bbug_tea_banner_mb .bbug_tea_banner_center_mb .banner_item_center_mb .year-center-counter .year-next .number-last-top {
+        font-family: Montserrat !important;
+        font-weight: 900;
+        -webkit-text-fill-color: transparent;
+        background: url(../images/fill_4.png) center;
+        -webkit-background-clip: text;
+         background-clip: text;
+    }
+    .bbug_tea_banner_mb .bbug_tea_banner_center_mb .banner_item_center_mb .year-center-counter .year-next .number-last-bottom {
+        font-family: Montserrat !important;
+        font-weight: 900;
+        -webkit-text-fill-color: transparent;
+        background: url(../images/fill_5.png) center;
+        -webkit-background-clip: text;
+         background-clip: text;
     }
 
     .bbug_tea_banner_mb .bbug_tea_banner_center_mb .banner_item_center_mb .year-center-counter .year-next {
+        font-family: Montserrat !important;
+        font-weight: 900;
         display: flex;
         flex-direction: column;
         align-items: center;
