@@ -1346,7 +1346,7 @@ body {
 /* iPhone XS Max, XR ———– */
 @media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
     .bbug_tea_heart .heart_layout{
-        gap: 112px;
+        gap: 22px;
     }
     .bbug_tea_heart .heart_layout .heart_box{
         width: 88px;
