@@ -1342,3 +1342,23 @@ body {
         height: 82px;
     }
 }
+
+/* iPhone XS Max, XR ———– */
+@media only screen and (min-device-width: 414px) and (max-device-height: 896px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 3){
+    .bbug_tea_heart .heart_layout{
+        gap: 112px;
+    }
+    .bbug_tea_heart .heart_layout .heart_box{
+        width: 88px;
+        height: 88px;
+    }
+    #heart_bbugtea:before{
+        width: 88px;
+        height: 88px;
+    }
+    #heart_bbugtea:after{
+        width: 88px;
+        height: 88px;
+    }
+
+    }
