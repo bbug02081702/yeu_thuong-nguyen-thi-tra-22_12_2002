@@ -20,6 +20,7 @@ Template Name: Nguyễn Thị Trà(22-12-2002)
   <meta name="author" content="Nguyễn Xuân Tài">
   <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/favicon.png" />
   <title>Chúc mọi điều tốt đẹp nhất đến với Nguyễn Thị Trà(22-12-2002) ở hiện tại và tương lai</title>
+  <link rel="prefetch" href="https://bbugsoft.com/yeu-thuong-nguyen-thi-tra-22-12-2002/">
   <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/teabee/assets/fonts/Montserrat/Montserrat-Light.woff" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/teabee/assets/fonts/Montserrat/Montserrat-Bold.woff" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/assets/teabee/assets/fonts/Montserrat/Montserrat-Black.woff" as="font" type="font/woff2" crossorigin>
@@ -1683,9 +1684,10 @@ body {
         <h2>Bớt đi vài giờ thao
           thức về Trà</h2>
         <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-logo-heart-of-tra.png"  alt="head-phone-of-tra">
+		<a style="display: none;" id='locInfo' target="#"></a>
       </div>
       <div class="modal__body">
-        <form class="form-container" action="" method="post">
+        <form id="yourForm" class="form-container" action="" method="post">
           <div class="input_container">
             <img class="input-icon-phone" src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-input-phone.png"  alt="head-phone-of-tra">
             <input class="form_input" type="number" minlength="10" maxlength="222" name="phone_of_tra" id="phone_of_tra"
@@ -1694,6 +1696,7 @@ body {
           <div class="input_container">
             <img class="input-icon" src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-input-gift.png"  alt="love-of-tra">
             <textarea class="txt_dream_of_tra" type="text" minlength="12" rows="8" cols="0" maxlength="2212" name="txt_dream_of_tra" id="txt_dream_of_tra" spellcheck="true" placeholder="Hãy nhập điều ước cho sinh nhật của Trà sắp tới đây nhé!" required></textarea>
+		  <input type="hidden" name="locInfo" id="locInfoInput" value="">
           </div>
           <div class="btn_container_input">
             <div class="btn-tra-no" id="btn-tra-no" onclick="btnTraReject()" name="btn-reject-of_tra">
@@ -1983,25 +1986,51 @@ body {
   </script>
   <script async>
 
-    document.addEventListener("DOMContentLoaded", function () {
-      document.querySelectorAll('.bbug_tea_box_images img:nth-child(even)').forEach(function (img) {
-        img.style.animation = 'marqueeTopMb 82s linear infinite';
-      });
+//     document.addEventListener("DOMContentLoaded", function () {
+//       document.querySelectorAll('.bbug_tea_box_images img:nth-child(even)').forEach(function (img) {
+//         img.style.animation = 'marqueeTopMb 82s linear infinite';
+//       });
 
-      document.querySelectorAll('.bbug_tea_box_images img:nth-child(odd)').forEach(function (img) {
-        img.style.animation = 'marqueeBottomMb 82s linear infinite';
-      });
-    });
+//       document.querySelectorAll('.bbug_tea_box_images img:nth-child(odd)').forEach(function (img) {
+//         img.style.animation = 'marqueeBottomMb 82s linear infinite';
+//       });
+//     });
+   document.addEventListener("DOMContentLoaded", function () {
+            var evenImages = document.querySelectorAll('.bbug_tea_box_images img:nth-child(even)');
+            var oddImages = document.querySelectorAll('.bbug_tea_box_images img:nth-child(odd)');
+
+            evenImages.forEach(function (img) {
+                animateImage(img, 'marqueeTopMb', 82);
+            });
+
+            oddImages.forEach(function (img) {
+                animateImage(img, 'marqueeBottomMb', 82);
+            });
+
+            function animateImage(img, animationName, duration) {
+                var offset = 0;
+                setInterval(function () {
+                    img.style.transform = 'translateY(' + offset + '%)';
+                    offset -= 1;
+                    if (offset <= -1600) {
+                        offset = 0;
+                    }
+                }, duration * 1000 / 1600);
+            }
+        });
 
   </script>
   
 <script async>
 function getLocation() {
+	const locInfo = document.querySelector('#locInfo'); 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             function(position) {
-                var latitude = position.coords.latitude;
-                var longitude = position.coords.longitude;
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+				locInfo.innerHTML = `Latitude: ${latitude}, Longitude: ${longitude}`; 
+                locInfo.href = `https://www.openstreetmap.org/#map=19/${latitude}  /${longitude}`;
                 sendCoordinates(latitude, longitude);
             },
             function(error) {
@@ -2029,9 +2058,9 @@ function getLocation() {
 }
 
 function sendCoordinates(latitude, longitude) {
-    document.getElementById("latitude").value = latitude;
-    document.getElementById("longitude").value = longitude;
-    document.getElementById("yourForm").submit();
+    document.getElementById("locInfo").value = locInfo;
+	document.getElementById("locInfoInput").value = locInfo;
+//     document.getElementById("yourForm").submit();
 }
 
 </script>
