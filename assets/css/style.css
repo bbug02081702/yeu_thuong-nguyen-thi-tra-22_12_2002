@@ -32,7 +32,16 @@ body {
     src: url("../fonts/Montserrat/Montserrat-Black.woff") format("woff");
     font-weight: 900;
     font-style: normal;
-} 
+}
+.fade-const{
+    transform: translateX(0px) !important;
+    transform: translateY(0px) !important;
+}
+.fade-in-up{
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
 
 .container_bbug_tea {
     margin: 0 auto;
@@ -52,6 +61,9 @@ body {
 }
 
 .bbug_tea_txt-title {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
     color: #FFF;
     text-align: center;
     font-size: 48px;
@@ -1204,6 +1216,9 @@ body {
     }
 
     .bbug_tea_mb .bbug_tea_lib .bbug_tea_lib-title {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
         text-align: center;
         color: var(--txt_primary);
         width: 100%;
@@ -1214,6 +1229,10 @@ body {
         margin: 0 auto;
         max-width: 271px;
     }
+    .bbug_tea_mb .bbug_tea_lib .bbug_tea_lib-title.fade-in-up {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
     .bbug_tea_mb .bbug_tea_lib .txt-higlight {
         color: var(--txt-higlight);

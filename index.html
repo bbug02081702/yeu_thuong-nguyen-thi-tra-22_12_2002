@@ -19,7 +19,7 @@
 <body>
   <section class="bbug_tea container_bbug_tea">
     <div class="bbug_tea_title">
-      <h2 class="bbug_tea_txt-title container-title">
+      <h2 class="bbug_tea_txt-title container-title fade-all fade-in-up">
         Hành trình quá khứ của <b class="txt-higlight">Nguyễn Thị Trà</b>
         với những bức ảnh đẹp...</h2>
       <div class="bbug_tea_banner">
@@ -163,7 +163,7 @@
       </div>
     </div>
     <div class="bbug_tea_lib">
-      <h2 class="bbug_tea_lib-title">
+      <h2 class="bbug_tea_lib-title fade-all fade-in-up">
         Hành trình quá khứ của <b class="txt-higlight">Nguyễn Thị Trà</b>
         với những bức ảnh đẹp...</h2>
       <div class="bbug_tea_box_images">
@@ -251,6 +251,7 @@
     <img src="./assets/images/favicon.png" alt="">
     <span class="ping"></span>
   </div>
+  
   <div class="modal hide">
     <div class="modal__inner">
       <div class="modal__header">
@@ -610,6 +611,78 @@
     });
 
   </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    let contentMetricExports = document.querySelectorAll(".bbug_tea_txt-title");
+
+    contentMetricExports.forEach((contentMetricExport) => {
+        contentMetricExport.addEventListener("mouseover", function () {
+            // Xóa các class không mong muốn khi hover vào
+            contentMetricExport.classList.remove("fade-all", "fade-in-up", "fade-const");
+             // Khi hover, đặt opacity thành 1
+             contentMetricExport.style.opacity = 1;
+        });
+
+        contentMetricExport.addEventListener("mouseout", function () {
+            // Thêm lại các class khi không hover
+            contentMetricExport.classList.add("fade-all", "fade-in-up", "fade-const");
+            // Khi rời khỏi, đặt lại opacity về 1
+            // contentMetricExport.style.opacity = 1;
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    let contentMetricExportSkill = document.querySelectorAll(".bbug_tea_lib-title");
+
+    contentMetricExportSkill.forEach((contentMetricExportSkill) => {
+        contentMetricExportSkill.addEventListener("mouseover", function () {
+            // Xóa các class không mong muốn khi hover vào
+            contentMetricExportSkill.classList.remove("fade-all", "fade-in-up", "fade-const");
+             // Khi hover, đặt opacity thành 1
+             contentMetricExportSkill.style.opacity = 1;
+        });
+
+        contentMetricExportSkill.addEventListener("mouseout", function () {
+            // Thêm lại các class khi không hover
+            contentMetricExportSkill.classList.add("fade-all", "fade-in-up", "fade-const");
+            // Khi rời khỏi, đặt lại opacity về 1
+            // contentMetricExportSkill.style.opacity = 1;
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var testDivs = document.querySelectorAll(".fade-all");
+
+    function handleScroll() {
+        testDivs.forEach(function (testDiv) {
+            var rect = testDiv.getBoundingClientRect();
+            var isInViewport = rect.top <= window.innerHeight && rect.bottom >= 0;
+
+            if (isInViewport) {
+                testDiv.classList.add("fade-in-up");
+
+                // kiem tra 0 pacity = 1 ? và them fade-const
+                if (getComputedStyle(testDiv).opacity === "1") {
+                    testDiv.classList.add("fade-const");
+                } else {
+                    testDiv.classList.remove("fade-const");
+                }
+            } else {
+                testDiv.classList.remove("fade-in-up");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+});
+
+// end xu lý srcoll
+</script>
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/ScrollTrigger.min.js"></script> -->
 </body>

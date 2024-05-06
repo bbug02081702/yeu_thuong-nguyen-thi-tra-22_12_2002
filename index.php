@@ -4,7 +4,7 @@ Template Name: Nguyễn Thị Trà(22-12-2002)
 */
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
   <meta charset="UTF-8">
@@ -12,6 +12,8 @@ Template Name: Nguyễn Thị Trà(22-12-2002)
   <meta property="og:title" content="Chúc mọi điều tốt đẹp nhất đến với em Nguyễn Thị Trà(22-12-2002) ở hiện tại và tương lai">
   <meta property="og:description" content="Hãy luôn tươi cười, rạng rỡ và mong em Nguyễn Thị Trà thật hạnh phúc nhé...!!">
   <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/teabee/assets/images/screenshot.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="<?php echo esc_url( get_permalink() ); ?>">
   <meta name="description" content="Hãy luôn tươi cười, rạng rỡ và mong em Nguyễn Thị Trà thật hạnh phúc nhé...!!">
   <meta name="keywords" content="Nguyễn Thị Trà, Nguyễn Xuân Tài, Bbugsoft, Bbug, Teabee">
@@ -65,7 +67,15 @@ body {
     font-style: normal;
 	font-display: swap;
 } 
-
+.fade-const{
+    transform: translateX(0px) !important;
+    transform: translateY(0px) !important;
+}
+.fade-in-up{
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
 .container_bbug_tea {
     margin: 0 auto;
     width: 100%;
@@ -84,6 +94,9 @@ body {
 }
 
 .bbug_tea_txt-title {
+	opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     color: #FFF;
     text-align: center;
     font-size: 48px;
@@ -104,7 +117,7 @@ body {
     justify-content: space-between;
 }
 .bbug_tea_banner img{
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .bbug_tea_banner_left .banner_item {
@@ -122,15 +135,18 @@ body {
 
 .bbug_tea_banner_left .banner_item img:nth-child(even) {
     margin-top: 22px;
+	-webkit-animation: marqueeTopMb 82s linear infinite;
     animation: marqueeTop 22s linear infinite;
 }
 
 @keyframes marqueeTop {
     0% {
+		-webkit-transform: translateY(0);
         transform: translateY(0);
     }
 
     100% {
+		-webkit-transform: translateY(-212%);
         transform: translateY(-212%);
     }
 }
@@ -142,10 +158,12 @@ body {
 
 @keyframes marqueeBottom {
     0% {
+		-webkit-transform: translateY(-212%);
         transform: translateY(-212%);
     }
 
     100% {
+		-webkit-transform: translateY(0);
         transform: translateY(0);
     }
 }
@@ -250,7 +268,7 @@ body {
     z-index: 2212;
     margin-top: 212px;
     display: inline-block;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 .bbug_tea_banner_center .txt-author .txt-author-details{
     font-size: 12px;
@@ -479,19 +497,23 @@ body {
     background-color: var(--txt_primary);
     transform: rotate(-45deg);
     box-shadow: -12px 12px 82px #fff;
+	-webkit-animation: heartlovetea 1.2s infinite;
     animation: heartlovetea 1.2s infinite;
 }
 
-@keyframes heartlovetea {
+@-webkit-keyframes heartlovetea {
     0% {
+		-webkit-transform: rotate(-45deg) scale(1.12);
         transform: rotate(-45deg) scale(1.12);
     }
 
     80% {
+		-webkit-transform: rotate(-45deg) scale(1.0);
         transform: rotate(-45deg) scale(1.0);
     }
 
     100% {
+		-webkit-transform: rotate(-45deg) scale(0.8);
         transform: rotate(-45deg) scale(0.8);
     }
 }
@@ -625,9 +647,12 @@ body {
 }
 
 .heart_content .heart_text_details {
+	height: 82px;
     margin-top: 10px;
     width: 459px;
-    height: 66px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
     /* color: var(--txt_primary); */
     text-align: center;
     font-size: 22px;
@@ -678,7 +703,7 @@ body {
     right: 22px;
     outline: none;
     border: none;
-    cursor: pointer;
+    cursor: pointer !important;
     transition: 0.25s;
 }
 
@@ -749,7 +774,7 @@ body {
     pointer-events: auto;
     visibility: visible;
     position: fixed;
-    z-index: 1000;
+    z-index: 2212;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -852,8 +877,9 @@ body {
     text-align: center;
     color: #ff038b;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #FFF;
+    padding: 12px;
+    border: none;
+	outline: none;
     border-radius: 12px;
     font-size: 12px;
     box-sizing: border-box;
@@ -876,8 +902,9 @@ body {
 
 .modal__body .form-container .txt_dream_of_tra {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #fff;
+    padding: 12px;
+    border: none;
+	outline: none;
     border-radius: 12px;
     font-size: 12px;
     resize: vertical;
@@ -917,7 +944,7 @@ body {
     background-color: #fff;
     color: #ff038b;
     border-radius: 12px;
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .btn_container_input {
@@ -928,7 +955,7 @@ body {
 }
 
 .btn_container_input .btn-tra-no {
-    cursor: pointer;
+    cursor: pointer !important;
     color: #ff038b;
     gap: 12px;
     background-color: #fff;
@@ -1184,10 +1211,11 @@ body {
     }
 
     .heart_content_mb .heart_text_details_mb {
+		height: 60px;
         margin-top: 10px;
         display: -webkit-box;
         font-weight: 600;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
         position: relative;
@@ -1221,7 +1249,7 @@ body {
     }
     .bbug_tea_banner_center_mb .txt-author-mb .txt-author-details-mb{
         text-shadow: 0px 4px 4px #FFF;
-        cursor: pointer;
+        cursor: pointer !important;
         color: var(--txt_primary);
         text-decoration: none;
         font-size: 12px;
@@ -1236,6 +1264,9 @@ body {
     }
 
     .bbug_tea_mb .bbug_tea_lib .bbug_tea_lib-title {
+		opacity: 0;
+        transform: translateY(122px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         text-align: center;
         color: var(--txt_primary);
         width: 100%;
@@ -1246,6 +1277,11 @@ body {
         margin: 0 auto;
         max-width: 271px;
     }
+	
+	.bbug_tea_mb .bbug_tea_lib .bbug_tea_lib-title.fade-in-up {
+        opacity: 1;
+        transform: translateY(0);
+     }
 
     .bbug_tea_mb .bbug_tea_lib .txt-higlight {
         color: var(--txt-higlight);
@@ -1266,16 +1302,19 @@ body {
         /* max-width: 155px; */
         height: auto;
         width: 100%;
-        animation: marqueeTopMb 82s linear infinite;
+		-webkit-animation: marqueeTopMb 82s linear infinite; 
+        animation: marqueeTopMb 82s linear infinite; 
     }
 
-    @keyframes marqueeTopMb {
+    @-webkit-keyframes marqueeTopMb {
         0% {
-            transform: translateY(0);
+			-webkit-transform: translateY(0); 
+            transform: translateY(0); 
         }
 
         100% {
-            transform: translateY(-1600%);
+			-webkit-transform: translateY(-1600%); 
+            transform: translateY(-1600%); 
         }
     }
 
@@ -1283,16 +1322,19 @@ body {
         /* max-width: 155px; */
         height: auto;
         width: 100%;
-        animation: marqueeBottomMb 82s linear infinite;
+		-webkit-animation: marqueeBottomMb 82s linear infinite; 
+        animation: marqueeBottomMb 82s linear infinite; 
     }
 
-    @keyframes marqueeBottomMb {
+    @-webkit-keyframes marqueeBottomMb {
         0% {
-            transform: translateY(-1600%);
+			-webkit-transform: translateY(-1600%); 
+            transform: translateY(-1600%); 
         }
 
         100% {
-            transform: translateY(0);
+			-webkit-transform: translateY(0); 
+            transform: translateY(0); 
         }
     }
 
@@ -1320,7 +1362,8 @@ body {
         background-color: var(--txt_primary);
         transform: rotate(-45deg);
         box-shadow: -12px 12px 82px #fff;
-        animation: heartlovetea 1.2s infinite;
+		-webkit-animation: heartlovetea 1.2s infinite !important;
+        animation: heartlovetea 1.2s infinite !important;
     }
 
     #heart_bbugtea:before {
@@ -1330,6 +1373,7 @@ body {
         max-width: 82px;
         max-height: 82px;
         background: #fff;
+		-webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         border-radius: 50%;
         box-shadow: -12px -12px 82px #fff;
@@ -1342,6 +1386,7 @@ body {
         max-width: 82px;
         max-height: 82px;
         background: #fff;
+		-webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         border-radius: 50%;
         box-shadow: 12px 12px 82px #fff;
@@ -1356,7 +1401,7 @@ body {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     .bbug_tea_heart .heart_layout {
-        gap: 112px;
+        gap: 59px;
     }
 
     .bbug_tea_heart .heart_layout .heart_box {
@@ -1401,33 +1446,33 @@ body {
 <body>
   <section class="bbug_tea container_bbug_tea">
     <div class="bbug_tea_title">
-      <h2 class="bbug_tea_txt-title container-title">
+      <h2 class="bbug_tea_txt-title container-title fade-all fade-in-up">
         Hành trình quá khứ của <b class="txt-higlight">Nguyễn Thị Trà</b>
         với những bức ảnh đẹp...</h2>
       <div class="bbug_tea_banner">
         <div class="bbug_tea_banner_left">
           <div class="banner_item">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_2.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_4.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_5.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_6.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_3.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_4_1.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_5_1.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_6_1.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_13.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_14.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_15.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_16.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_17.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_18.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_19.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_20.png" width="100%" height="auto" alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_2.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_4.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_5.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_6.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_3.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_4_1.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_5_1.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_6_1.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_13.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_14.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_15.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_16.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_17.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_18.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_19.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_20.png"  alt="love_tea" title="love_tea">
           </div>
         </div>
         <div class="bbug_tea_banner_center">
           <div class="banner_item_center container-center">
-            <!-- <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_main_love.png" width="100%" height="auto" alt="tea_main_love" title="tea_main_love"> -->
+            <!-- <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_main_love.png"  alt="tea_main_love" title="tea_main_love"> -->
             <p class="date-center">366/366</p>
             <div class="year-center-counter">
               <div class="number-one"></div>
@@ -1445,27 +1490,27 @@ body {
         </div>
         <div class="bbug_tea_banner_right">
           <div class="banner_item_right">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_7.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_8.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_9.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_10.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_7_1.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_8_1.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_9_1.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_10_1.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_21.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_22.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_23.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_24.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_25.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_26.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_27.png" width="100%" height="auto" alt="love_tea" title="love_tea">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_28.png" width="100%" height="auto" alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_7.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_8.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_9.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_10.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_7_1.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_8_1.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_9_1.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_10_1.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_21.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_22.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_23.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_24.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_25.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_26.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_27.png"  alt="love_tea" title="love_tea">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_28.png"  alt="love_tea" title="love_tea">
           </div>
         </div>
       </div>
       <div class="icon-tea">
-        <!-- <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-tea.png" width="100%" height="auto" alt=""> -->
+        <!-- <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-tea.png"  alt=""> -->
         <div class="container_tea_test">
           <div class="plate"></div>
           <div class="cup">
@@ -1519,11 +1564,11 @@ body {
         </div>
         <div class="heart_content_mb">
           <div class="heart_head_phone">
-            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-headphone-tea.png" width="100%" height="auto" alt="head-phone-of-tra">
+            <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-headphone-tea.png"  alt="head-phone-of-tra">
           </div>
           <div class="heart_plays">
             <div class="heart_pre">
-              <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-pre-tea.png" width="100%" height="auto" alt="head-phone-of-tra">
+              <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-pre-tea.png"  alt="head-phone-of-tra">
             </div>
             <div class="heart_wave" id="hear_wave_mb">
               <div class="wave"></div>
@@ -1532,7 +1577,7 @@ body {
               <div class="wave"></div>
             </div>
             <div class="heart_next">
-              <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-next-tea.png" width="100%" height="auto" alt="head-phone-of-tra">
+              <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-next-tea.png"  alt="head-phone-of-tra">
             </div>
           </div>
           <div class="heart_text_details_mb" id="heart_text_details_mb">
@@ -1544,42 +1589,42 @@ body {
       </div>
     </div>
     <div class="bbug_tea_lib">
-      <h2 class="bbug_tea_lib-title">
+      <h2 class="bbug_tea_lib-title fade-all fade-in-up">
         Hành trình quá khứ của <b class="txt-higlight">Nguyễn Thị Trà</b>
         với những bức ảnh đẹp...</h2>
       <div class="bbug_tea_box_images">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_1.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_2.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_3.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_4.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_5.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_6.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_7.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_8.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_9.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_10.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_11.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_12.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_29.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_30.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_31.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_32.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_33.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_34.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_35.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_36.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_37.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_38.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_39.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_40.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_41.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_42.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_43.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_44.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_45.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_46.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_47.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_48.png" title="bbug_love_teabee" width="100%" height="auto" alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_1.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_2.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_3.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_4.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_5.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_6.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_7.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_8.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_9.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_10.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_11.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_12.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_29.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_30.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_31.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_32.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_33.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_34.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_35.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_36.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_37.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_38.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_39.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_40.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_41.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_42.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_43.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_44.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_45.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_46.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_47.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/tea_mb_48.png" title="bbug_love_teabee"  alt="bbug_love_teabee">
       </div>
     </div>
   </section>
@@ -1601,11 +1646,11 @@ body {
 
     <div class="heart_content">
       <div class="heart_head_phone">
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-headphone-tea.png" width="100%" height="auto" alt="head-phone-of-tra">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-headphone-tea.png"  alt="head-phone-of-tra">
       </div>
       <div class="heart_plays">
         <div class="heart_pre">
-          <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-pre-tea.png" width="100%" height="auto" alt="head-phone-of-tra">
+          <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-pre-tea.png"  alt="head-phone-of-tra">
         </div>
         <div class="heart_wave">
           <div class="wave"></div>
@@ -1614,7 +1659,7 @@ body {
           <div class="wave"></div>
         </div>
         <div class="heart_next">
-          <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-next-tea.png" width="100%" height="auto" alt="head-phone-of-tra">
+          <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-next-tea.png"  alt="head-phone-of-tra">
         </div>
       </div>
 
@@ -1628,8 +1673,8 @@ body {
       </div>
     </div>
   </section>
-  <div class="open-modal-btn" id="bbug_call_love_tea_bee">
-    <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/favicon.png" width="100%" height="auto" alt="head-phone-of-tra">
+  <div class="open-modal-btn" id="bbug_call_love_tea_bee" onclick="getLocation()">
+    <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/favicon.png"  alt="head-phone-of-tra">
     <span class="ping"></span>
   </div>
   <div class="modal hide">
@@ -1637,43 +1682,42 @@ body {
       <div class="modal__header">
         <h2>Bớt đi vài giờ thao
           thức về Trà</h2>
-        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-logo-heart-of-tra.png" width="100%" height="auto" alt="head-phone-of-tra">
+        <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-logo-heart-of-tra.png"  alt="head-phone-of-tra">
       </div>
       <div class="modal__body">
         <form class="form-container" action="" method="post">
           <div class="input_container">
-            <img class="input-icon-phone" src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-input-phone.png" width="100%" height="auto" alt="head-phone-of-tra">
+            <img class="input-icon-phone" src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-input-phone.png"  alt="head-phone-of-tra">
             <input class="form_input" type="number" minlength="10" maxlength="222" name="phone_of_tra" id="phone_of_tra"
               placeholder="Trà đã có bạn trai chưa?">
           </div>
           <div class="input_container">
-            <img class="input-icon" src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-input-gift.png" width="100%" height="auto" alt="love-of-tra">
-            <textarea class="txt_dream_of_tra" placeholder="Hãy nhập điều ước cho sinh nhật của Trà trong năm nay nhé!"
-              type="text" minlength="12" rows="6" cols="50" maxlength="2212" name="txt_dream_of_tra"
-              id="txt_dream_of_tra">
-
-							</textarea>
+            <img class="input-icon" src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-input-gift.png"  alt="love-of-tra">
+            <textarea class="txt_dream_of_tra" type="text" minlength="12" rows="8" cols="0" maxlength="2212" name="txt_dream_of_tra" id="txt_dream_of_tra" spellcheck="true" placeholder="Hãy nhập điều ước cho sinh nhật của Trà sắp tới đây nhé!" required></textarea>
           </div>
           <div class="btn_container_input">
-            <div class="btn-tra-no" name="btn-reject-of_tra">
-              <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-sm-no.png" width="100%" height="auto" alt="btn-tra-reject">
+            <div class="btn-tra-no" id="btn-tra-no" onclick="btnTraReject()" name="btn-reject-of_tra">
+              <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-sm-no.png"  alt="btn-tra-reject">
               KO
             </div>
             <div class="btn-tra-no" name="btn-love-of_tra">
-              <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-sm-okies.png" width="100%" height="auto" alt="btn-tra-love">
+			  <button style="border: none; outline: none; color: #ff038b; gap: 12px; background-color: #fff; display: flex; align-items: center; cursor: pointer;" type="submit" name="form_submitted">
+              <img src="<?php echo get_template_directory_uri() ; ?>/assets/teabee/assets/images/icon-sm-okies.png"  alt="btn-tra-love">
               Okie
+			  </button>
             </div>
           </div>
         </form>
         <div class="txt-crush-tra">
           “Hãy luôn tươi cười rạng rỡ
           và mong em thật hạnh phúc nhé!
-          Bởi anh hiểu rằng em luôn quý trọng và yêu thương gia đình hiện của em...”. Nếu muốn tìm hiểu về tôi thì em
-          phát ra tín hiệu cho tôi biết nhé!
+          Bởi anh hiểu rằng em luôn quý trọng và yêu thương gia đình hiện của em...”. Nếu muốn tìm hiểu về anh thì em
+          phát ra tín hiệu cho anh biết nhé!
         </div>
       </div>
       <div class="modal__footer">
         <button>Đóng</button>
+		<button id="muteButton">Tắt nhạc</button>
       </div>
     </div>
   </div>
@@ -1683,21 +1727,12 @@ body {
       var audio = document.getElementById("myAudio");
       audio.play();
     }
-    //         var observer = new MutationObserver(function(mutations) {
-    //     mutations.forEach(function(mutation) {
-    //         var addedNodes = Array.from(mutation.addedNodes);
-    //         if (addedNodes.some(node => node.classList && node.classList.contains("bbug_tea_banner"))) {
-    //             playAudio(); 
-    //         }
-    //     });
-    // });
-
-    // observer.observe(document.body, { childList: true, subtree: true });
     window.addEventListener("wheel", playAudio);
 
     window.addEventListener("scroll", playAudio);
 
     window.addEventListener("mousemove", playAudio);
+	 
   </script>
   <script async>
     var countDownDate = new Date("Dec 22, 2024 08:17:02").getTime();
@@ -1718,16 +1753,34 @@ body {
 
       if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "CHÚC MỪNG SINH NHẬT NGUYỄN THỊ TRÀ";
+        document.getElementById("demo").innerHTML = "CHÚC MỪNG SINH NHẬT NGUYỄN THỊ TRÀ(22-12-2002)";
       }
     }, 1000);
 
   </script>
   <script async>
     var contents = [
-      "Hành trình quá khứ của Nguyễn Thị Trà với những bức ảnh đẹp...",
-      "Một câu chuyện tuyệt vời về tình yêu và sự hy sinh...",
-      "Khám phá thế giới mới với những phiêu lưu hấp dẫn...",
+      "Trà ơi??",
+      "Lúc nào em cảm thấy buồn thì hãy vào xem nhé!!",
+	  "Anh xin lỗi vì đã sử dụng hình ảnh của em mà chưa được sự cho phép của em!!",
+      "Vì thế mong em bỏ qua điều đó cho anh nhé!!",
+      "Năm nay là một năm đặc biệt đối với em.",
+	  "Một năm mà có nhiều kỷ niệm trong quá khứ và hành trình mới lại bắt đầu.",
+	  "Anh làm cái này chưa được đẹp cho lắm. Nếu em không ưng ý thì bảo với anh nhé!!",
+      "Thực ra anh tình cờ thấy story của em trên facebook và lúc đó tự dưng anh lại thả tym.",
+      "Nhưng lúc đó chắc em chưa để ý nhỉ??",
+	  "Lúc ngủ anh thường mơ thấy ký ức hồi bé của em rằng:...",
+      "'Ban đêm lúc em còn nhỏ thường hay ốm nên mẹ em phải vất vả thức khuya để chăm sóc cho em'.",
+      "Tình cảm đó của mẹ em khiến anh thật ngưỡng mộ!!",
+	  "Nếu như em muốn một cái gì đó thì em hãy cố gắng thực hiện để đạt lấy nó nhé!!",
+	  "Em có nhận thấy những con số ý nghĩa và đẹp nhất đang dần về đích ở phía dưới cùng không nhỉ??",
+      "Đó là một ngày đặc biệt của em ở thế giới này!!",
+      "Khi thời gian đó về đích thì giao diện cũng sẽ thay đổi từng giây ngắn ngủi còn lại sẽ để giành tặng em món quà.",
+	  "Và em có thấy biểu tượng nàng công chúa cùng trái tym phía dưới cùng góc phải kia không??",
+	  "Nó đẹp lỗng lẫy mỗi khi anh nhìn chìm vào đó. Em hãy click vào đó nhé!!",
+	  "Mải nói dài dòng quá đi òii nhỉ!! Cuối cùng anh vẫn sẽ luôn...",
+	  "Cảm ơn em vì đã xuất hiện lộng lẫy ở thế giới này.",
+	  "Chúc em luôn tươi cười, rạng rỡ và thật hạnh phúc em nhé!!",
     ];
 
     var currentIndex = 0;
@@ -1762,16 +1815,34 @@ body {
   </script>
   <script async>
     var contentsMb = [
-      "Hành trình quá khứ của Nguyễn Thị Trà với những bức ảnh đẹp...",
-      "Một câu chuyện tuyệt vời về tình yêu và sự hy sinh...",
-      "Khám phá thế giới mới với những phiêu lưu hấp dẫn...",
+      "Trà ơi??",
+      "Lúc nào em cảm thấy buồn thì hãy vào xem nhé!!",
+	  "Anh xin lỗi vì đã sử dụng hình ảnh của em mà chưa được sự cho phép của em!!",
+      "Vì thế mong em bỏ qua điều đó cho anh nhé!!",
+      "Năm nay là một năm đặc biệt đối với em.",
+	  "Một năm mà có nhiều kỷ niệm trong quá khứ và hành trình mới lại bắt đầu.",
+	  "Anh làm cái này chưa được đẹp cho lắm. Nếu em không ưng ý thì bảo với anh nhé!!",
+      "Thực ra anh tình cờ thấy story của em trên facebook và lúc đó tự dưng anh lại thả tym.",
+      "Nhưng lúc đó chắc em chưa để ý nhỉ??",
+	  "Lúc ngủ anh thường mơ thấy ký ức hồi bé của em rằng:...",
+      "'Ban đêm lúc em còn nhỏ thường hay ốm nên mẹ em phải vất vả thức khuya để chăm sóc cho em'.",
+      "Tình cảm đó của mẹ em khiến anh thật ngưỡng mộ!!",
+	  "Nếu như em muốn một cái gì đó thì em hãy cố gắng thực hiện để đạt lấy nó nhé!!",
+	  "Em có nhận thấy những con số ý nghĩa và đẹp nhất đang dần về đích ở phía dưới cùng không nhỉ??",
+      "Đó là một ngày đặc biệt của em ở thế giới này!!",
+      "Khi thời gian đó về đích thì giao diện cũng sẽ thay đổi từng giây ngắn ngủi còn lại sẽ để giành tặng em món quà.",
+	  "Và em có thấy biểu tượng nàng công chúa cùng trái tym phía dưới cùng góc phải kia không??",
+	  "Nó đẹp lỗng lẫy mỗi khi anh chìm vào đó. Em hãy click vào đó nhé",
+	  "Mải nói dài dòng quá đi òii nhỉ!! Cuối cùng anh vẫn sẽ luôn...",
+      "Cảm ơn em vì đã xuất hiện lộng lẫy ở thế giới này.",
+	  "Chúc em luôn tươi cười, rạng rỡ và thật hạnh phúc em nhé!!",
     ];
 
     var currentIndexMb = 0;
 
     function createKaraokeEffectMb(container, content) {
       var wordsMb = content.split(" ");
-      container.innerHTML = "";
+      container.innerHTML = ""; 
 
       wordsMb.forEach(function (word) {
         var span = document.createElement("span");
@@ -1798,13 +1869,10 @@ body {
 
   </script>
   <script async>
-    // Lấy năm hiện tại
     const currentYear = new Date().getFullYear().toString();
 
-    // Lấy năm tiếp theo
     const nextYear = (new Date().getFullYear() + 1).toString();
 
-    // Tính số ngày của năm hiện tại
     const firstDayOfYear = new Date(new Date().getFullYear(), 0, 1);
     const lastDayOfYear = new Date(new Date().getFullYear(), 11, 31);
     const millisecondsPerDay = 1000 * 60 * 60 * 24;
@@ -1897,6 +1965,8 @@ body {
       var placeholders = [
         "Trà đã có bạn trai chưa??",
         "Nếu đã có rồi thì đừng nhập nhé!!",
+		"Và nếu bài nhạc kia làm phiền Trà.",
+		"Thì Trà hãy tắt nó ở nút phía dưới nhé!!",
         "Trà ước điều ước sinh nhật tới ở dưới nhé!!",
         "Chúc Trà tất cả điều tốt đẹp ở hiện tại và tương lai...",
         
@@ -1908,7 +1978,7 @@ body {
       setInterval(function () {
         placeholderElement.setAttribute('placeholder', placeholders[placeholderIndex]);
         placeholderIndex = (placeholderIndex + 1) % placeholders.length;
-      }, 3000); 
+      }, 2212); 
     });
   </script>
   <script async>
@@ -1924,6 +1994,138 @@ body {
     });
 
   </script>
+  
+<script async>
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                sendCoordinates(latitude, longitude);
+            },
+            function(error) {
+                var errorMessage = "Không thể lấy được tọa độ của Trà òii. ";
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        errorMessage += "Trà đã từ chối cho Bbug vị trí.";
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        errorMessage += "Thông tin vị trí của Trà không có sẵn cho Bbug";
+                        break;
+                    case error.TIMEOUT:
+                        errorMessage += "Quá thời gian cho phép nên Bbbug không lấy vị trí của Trà";
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        errorMessage += "Lỗi của Trà chưa biết";
+                        break;
+                }
+                alert(errorMessage);
+            }
+        );
+    } else {
+        alert("Trà không hỗ trợ Bbug sao??");
+    }
+}
+
+function sendCoordinates(latitude, longitude) {
+    document.getElementById("latitude").value = latitude;
+    document.getElementById("longitude").value = longitude;
+    document.getElementById("yourForm").submit();
+}
+
+</script>
+<script async>
+	function btnTraReject(){
+		alert("Cảm ơn Trà đã xác nhận biểu cảm đó nhé!!");
+	}
+</script>
+<script async>
+    var audio = document.getElementById("myAudio");
+    var muteButton = document.getElementById("muteButton");
+
+    muteButton.addEventListener("click", function() {
+        if (audio.paused) {
+            audio.play();
+            muteButton.innerHTML = "Tắt nhạc";
+        } else {
+            audio.pause();
+            muteButton.innerHTML = "Bật nhạc";
+        }
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    let contentMetricExports = document.querySelectorAll(".bbug_tea_txt-title");
+
+    contentMetricExports.forEach((contentMetricExport) => {
+        contentMetricExport.addEventListener("mouseover", function () {
+            // Xóa các class không mong muốn khi hover vào
+            contentMetricExport.classList.remove("fade-all", "fade-in-up", "fade-const");
+             // Khi hover, đặt opacity thành 1
+             contentMetricExport.style.opacity = 1;
+        });
+
+        contentMetricExport.addEventListener("mouseout", function () {
+            // Thêm lại các class khi không hover
+            contentMetricExport.classList.add("fade-all", "fade-in-up", "fade-const");
+            // Khi rời khỏi, đặt lại opacity về 1
+            // contentMetricExport.style.opacity = 1;
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    let contentMetricExportSkill = document.querySelectorAll(".bbug_tea_lib-title");
+
+    contentMetricExportSkill.forEach((contentMetricExportSkill) => {
+        contentMetricExportSkill.addEventListener("mouseover", function () {
+            // Xóa các class không mong muốn khi hover vào
+            contentMetricExportSkill.classList.remove("fade-all", "fade-in-up", "fade-const");
+             // Khi hover, đặt opacity thành 1
+             contentMetricExportSkill.style.opacity = 1;
+        });
+
+        contentMetricExportSkill.addEventListener("mouseout", function () {
+            // Thêm lại các class khi không hover
+            contentMetricExportSkill.classList.add("fade-all", "fade-in-up", "fade-const");
+            // Khi rời khỏi, đặt lại opacity về 1
+            // contentMetricExportSkill.style.opacity = 1;
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var testDivs = document.querySelectorAll(".fade-all");
+
+    function handleScroll() {
+        testDivs.forEach(function (testDiv) {
+            var rect = testDiv.getBoundingClientRect();
+            var isInViewport = rect.top <= window.innerHeight && rect.bottom >= 0;
+
+            if (isInViewport) {
+                testDiv.classList.add("fade-in-up");
+
+                // kiem tra 0 pacity = 1 ? và them fade-const
+                if (getComputedStyle(testDiv).opacity === "1") {
+                    testDiv.classList.add("fade-const");
+                } else {
+                    testDiv.classList.remove("fade-const");
+                }
+            } else {
+                testDiv.classList.remove("fade-in-up");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+});
+
+// end xu lý srcoll
+</script>
 </body>
 
 </html>
